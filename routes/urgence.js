@@ -21,7 +21,7 @@ router.get("/", auth, async (req, res) => {
  
     const ugences = await Urgence.find({
       user: req.user.id,
-       //dateUrgence: {"$gte": new Date('2020-02-01'), "$lt": new Date('2020-03-01')}
+      dateUrgence: {"$gte": new Date('2020-02-01'), "$lt": new Date('2020-03-01')}
       
     });
 

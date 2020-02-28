@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB = require('../api/config/db')
+const cors = require('cors')
 const app = express();
 const path = require('path')
 const Port = process.env.Port ||5050;
@@ -9,6 +10,7 @@ connectDB()
 //MidlleWare Init
 app.use(express.json({extended:false}));
 
+app.use(cors())
 
 //Define Routes
 app.use('/api/users', require('../api/routes/users'));
